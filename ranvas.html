@@ -1,0 +1,16 @@
+<!DOCTYPE HTML>
+<html>
+    <script type="application/javascript" src="ranvas.js"></script>
+    <body onload='draw()'>
+        <canvas id="ranvas" width="600" height="600" style="border:1px solid #000000;"></canvas>
+        <script type="application/javascript">
+        function draw() {
+            var ranvas = document.getElementById("ranvas");
+            var cntx = ranvas.getContext('2d')
+            for (var x = 0; x < 10; x++) {
+                rand_fillCircle(ranvas, cntx);
+            }
+        }
+       </script>
+    </body>
+</html>
