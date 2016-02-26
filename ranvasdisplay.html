@@ -2,25 +2,16 @@
 <html>
     <script type="application/javascript" src="ranvas.js"></script>
     <body onload='draw()'>
-        <canvas id="ranvas" width="1800" height="900" style="border:1px solid #000000;"></canvas>
+        <canvas id="ranvas" width="500" height="500" style="border:1px solid #000000;"></canvas>
         <script type="application/javascript">
         function draw() {
             var ranvas = document.getElementById("ranvas");
             var cntx = ranvas.getContext('2d');
-            repeat(function () {rand_strokeCircle(ranvas, cntx, {"x": 900, "y": 450, "stroke": rand_strokeStyle(cntx, {"blue_range": getRandomInt(100,255), "green_range": getRandomInt(100,255), "red_range": getRandomInt(50,100)})});}, 20000); 
-        }
-
-        ranvas.toBlob(function(blob) {
-            var newImg = document.createElement("img"),
-            url = URL.createObjectURL(blob);
-            newImg.onload = function () {
-                URL.revokeObjectURL(url);
-            };
-            newImg.src = url;
-            document.body.appendChild(newImg);
+            <!--Draw stuff goes here-->
         });
        </script>
+       <button name="return">Setup</button>
+       <button name="redraw">Redraw</button>
+       <button name="save">Save as PNG</button>
     </body>
-    <a href="javascript:ranvas.toDataURL('image/png;base64');" download="download"> download image</a>
-    <!--    <input id="save" type="button" value="save" onclick="download();"> -->
 </html>
