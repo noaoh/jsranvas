@@ -88,6 +88,17 @@ function rand_bezierCurve(canvas, ctx, object) {
     ctx.stroke();
 }
 
+function rand_arc(canvas, ctx, object) {
+    var object = object || {};
+    var penx = object.penx || getRandomInt(0, canvas.width);
+    var peny = object.peny || getRandomInt(0, canvas.height);
+    var radius = object.radius || getRandomInt(0, canvas.width);
+    var startAngle = object.startAngle || getRandomInt(0, 2 * Math.PI)
+    var endAngle = object.endAngle || getRandomInt(0, 2 * Math.PI) 
+    var anticlockwise = object.anticlockwise || true
+    ctx.arc(penx, peny, radius, startAngle, endAngle, anticlockwise);
+}
+
 function strokeTriangle(canvas, ctx, object) {
     var object = object || {};
     var x1 = object.x1 || 0;
